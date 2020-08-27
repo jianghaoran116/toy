@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>toy-vue</title>
+  </head>
+  <body>
+
+    <div id="app">
+      <p>{{message}}</p>
+      <input v-model="message">
+      <p v-bind:title="message">
+       xxxxxx
+      </p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    
+    <script type="module">
+      import { ToyVue as Vue } from './toy-vue.js';
+
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'you loaded this page on' + new Date().toLocaleString()
+        },
+        methods: {
+          reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+          }
+        },
+      })
+    </script>
+  </body>
+</html>
