@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>toy-vue</title>
+    <script type="text/javascript" src="./lodash.js"></script>
   </head>
   <body>
 
@@ -20,14 +21,32 @@
       new Vue({
         el: '#app',
         data: {
-          message: 'you loaded this page on' + new Date().toLocaleString()
+          message: 'you loaded this page on' + new Date().toLocaleString(),
+          title: 'test'
         },
         methods: {
           reverseMessage: function () {
             this.message = this.message.split('').reverse().join('')
           }
         },
-      })
+      });
+
+      // let obj = {
+      //   a: 1,
+      // };
+
+      // let handler = {
+      //   set(obj, key, value) {
+      //     return false
+      //   }
+      // };
+
+      // const newObj = new Proxy(obj, handler);
+      // console.log(newObj);
+      // const copyObj = _.cloneDeep(newObj);
+      // console.log(copyObj);
+      // copyObj.a = 2;
+      // console.log(copyObj);
     </script>
   </body>
 </html>

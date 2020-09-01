@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>toy-vue</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+    
+    <script type="module">
+      import { ToyVue as Vue } from './toy-vue.js';
+
+      window.app = new Vue({
+        el: '#app',
+        data() {
+          return {
+            price: 27,
+            infos: {
+              title: 'toy-vue'
+            }
+          }
+        },
+        render(createElement) {
+          return createElement('div', {
+            attrs: {
+              // title: this.infos.title,
+              title: 'toy-vue',
+            },
+          }, [
+            createElement('span', {}, this.price),
+            // createElement('span', {}, 21),
+          ]);
+        },
+      });
+    </script>
+  </body>
+</html>

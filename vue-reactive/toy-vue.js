@@ -29,7 +29,7 @@ export class ToyVue {
         // console.log(attribute.name);
         if (attribute.name === 'v-model') {
           let name = attribute.value;
-          effect(() => node.value = this.data[name]);
+          // effect(() => node.value = this.data[name]);
           node.addEventListener('input', event => this.data[name] = node.value)
         }
 
